@@ -4,17 +4,39 @@
 
 *TODO:* run `kubectl` command to show the running pods and services for all components. Take a screenshot of the output and include it here to verify the installation
 
+![Alt text](./../screenshots/kubectl_output.png "kubectl screenshot")
+
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
+
+![Alt text](./../screenshots/grafana_home.png "grafana home screenshot")
 
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
 
+This TODO is likely a mistake in the README.md, we were asked to configure Jeager as Data Source. This is the first step to create the Jeager instance:
+![Alt text](./../screenshots/grafana_jeager1.png "grafana jeager screenshot 1")
+
+This is the second step to configure Jeager instance as Data Source in Graphana
+![Alt text](./../screenshots/grafana_jeager2.png "grafana jeager screenshot 2")
+
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
+An SLO is an objective stated by the team over a given period of time; tipically the objective is set around the uptime and response time as they are busines critical
+
+SLI are the metrics to measure the performance of a service
+
+By measuring and analyzing the SLI we can obtain an objective proof that an SLO is met
+
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
+
+1. Latency. Time a request takes to complete
+2. Traffic. Number of request per hour
+3. Traffic. Location where the most traffic is observed
+4. Errors. Number of failed requests
+5. Saturation. Average memory utilized
 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
