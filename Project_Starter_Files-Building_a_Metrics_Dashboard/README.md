@@ -41,35 +41,60 @@ By measuring and analyzing the SLI we can obtain an objective proof that an SLO 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
+This Graphana dashboard showing traffic metric in the right panel
+![Alt text](./../screenshots/grafana_jeager3.png "grafana jeager screenshot 3")
+
+
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
 
+1. Python code containing the trace
+![Alt text](./../screenshots/jeager1.png "jeager screenshot 1")   
+
+2. Jeager UI:
+![Alt text](./../screenshots/jeager2.png "jeager screenshot 2")
+
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
+
+This Graphana dashboard showing the Jeager metric
+![Alt text](./../screenshots/grafana_jeager3.png "grafana jeager screenshot 3")
 
 ## Report Error
 *TODO:* Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue also include a screenshot of the tracer span to demonstrate how we can user a tracer to locate errors easily.
 
 TROUBLE TICKET
 
-Name:
+**Name:** Front-end shows HTTP 404 errors
 
-Date:
+**Date:** 12.04.2021
 
-Subject:
+**Subject:** The Front-end calls a non-existing API in the back-end. This is causing several instances of the HTTP 404 error (not found)
 
-Affected Area:
+**Affected Area:** Homepage
 
-Severity:
+**Severity:** Medium
 
-Description:
-
+**Description:** When the user clicks on a button, the Front-end calls a non-existing API in the back-end. This is causing several instances of the HTTP 404 error (not found)
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
 
+- Percentage Services Uptime
+- Percentage CPU and memory usage
+- Percentage of HTTP status codes for 20x
+- Average response time
+
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
+- Service uptime must be >99.99%. This is above the 99.95% objective and thus guaranteeing compliance.
+- CPU usage must be < 80%. Getting CPU beyond this could be a saturation problem. We should in such case scale out the number of replicas.
+- Memory usage must be < 80%. Getting RAM beyond this could be a problem of saturation. We should in such case increase memory settings in the container.
+- Average response time of HTTP requests must be < 100ms. This could lead to timeout issues.
+
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+
+
+![Alt text](./../screenshots/grafana_jeager3.png "grafana jeager screenshot 3")
