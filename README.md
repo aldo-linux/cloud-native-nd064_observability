@@ -10,3 +10,8 @@ The **Project_Starter_Files** directory has the files you'll need for the projec
 ## Solutions to issues:
 
 1. Add Jaeger instance: https://blog.mphomphego.co.za/blog/2021/07/25/How-to-configure-Jaeger-Data-source-on-Grafana-and-debug-network-issues-with-Bind-utilities.html
+
+2. Measure 40x ad 50x
+- https://knowledge.udacity.com/questions/645657
+- https://knowledge.udacity.com/questions/657711
+- https://knowledge.udacity.com/questions/706831
