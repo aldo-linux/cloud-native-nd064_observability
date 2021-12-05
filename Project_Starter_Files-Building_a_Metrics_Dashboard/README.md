@@ -88,10 +88,13 @@ TROUBLE TICKET
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
-- Service uptime must be >99.99%. This is above the 99.95% objective and thus guaranteeing compliance.
-- CPU usage must be < 80%. Getting CPU beyond this could be a saturation problem. We should in such case scale out the number of replicas.
-- Memory usage must be < 80%. Getting RAM beyond this could be a problem of saturation. We should in such case increase memory settings in the container.
-- Average response time of HTTP requests must be < 100ms. This could lead to timeout issues.
+1. Latency:
+- 90 percentile of request durations are under 100ms
+- Average response time are under 100ms
+2. Uptime:
+- Service uptime of at least 99.95%
+3. Errors:
+- Number of failed responses stays below 0.2%
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
