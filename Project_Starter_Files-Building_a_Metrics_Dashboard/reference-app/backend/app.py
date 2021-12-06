@@ -50,15 +50,27 @@ app.config[
 
 mongo = PyMongo(app)
 
+home_visits=0
+api_visits=0
 
 @app.route("/")
 def homepage():
+    with tracer.start_span("home") as span:
+        span.log_kv({"event": "visit_home", "count": home_visits})
+        span.set_tag("home_visits", home_visits)
+        span.set_tag("http.status_code", 501)
+        home_visits += 1
     return "Hello World"
 
 
 @app.route("/api")
 def my_api():
+    with tracer.start_span("api") as span:
+        span.log_kv({"event": "visit_api", "count": api_visits})
+        span.set_tag("api_visits", api_visits)
+        span.set_tag("http.status_code", 418)    
     answer = "something"
+    api_visits += 1
     return jsonify(repsonse=answer)
 
 
