@@ -42,7 +42,7 @@ By measuring and analyzing the SLI we can obtain an objective proof that an SLO 
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
 This Graphana dashboard showing traffic metric in the right panel
-![Alt text](./screenshots/grafana_jeager3.png "grafana jeager screenshot 3")
+![Alt text](./screenshots/40x_50x.png "grafana 40x vs 50x")
 
 
 ## Tracing our Flask App
@@ -99,5 +99,5 @@ TROUBLE TICKET
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
-
-![Alt text](./screenshots/grafana_jeager3.png "grafana jeager screenshot 3")
+This i my final dashboard:
+![Alt text](./screenshots/40x_50x.png "grafana 40x vs 50x")
