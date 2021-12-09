@@ -88,16 +88,26 @@ TROUBLE TICKET
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
-1. Latency:
-- 90 percentile of request durations are under 100ms
-- Average response time are under 100ms
-2. Uptime:
-- Service uptime of at least 99.95%
-3. Errors:
-- Number of failed responses stays below 0.2%
+1. SLI 1 (Latency): System should be able to handle 10 transaction per second
+   - KPI 1: A Flask request should be completed in 100ms or less 
+   - This KPI was choose as the system is highly transactional and transactions are time sensitive
+2. SLI 2 (Uptime): Service uptime of at least 99.1%
+   - KPI 2: Up time per POD is >= to 99.1%
+   - This KPI was choosen as the system is mission critcal and cannot afford downtime nor service degradation
+
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
-This i my final dashboard:
+This is my final dashboard, the meaning of the metrics displayed is as follows
+
+- **Uptime by service:** This measures the uptime (100% in the gauge) and the number 3 means each service is has 3 pods running
+
+- **Memory usage by Frontend and Backend:** Shows the memory usage in bytes for each container
+
+- **40x vs 50x errors:** The pie chart shows the HTTP status for each endpoint (frontend and backend) based on the tests generated with the curl command
+  
+- **Request durations in seconds:** Shows the requests duration in seconds
+
+
 ![Alt text](./screenshots/40x_50x.png "grafana 40x vs 50x")
